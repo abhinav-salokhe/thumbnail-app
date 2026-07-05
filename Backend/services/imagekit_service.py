@@ -13,13 +13,14 @@ imagekit = ImageKit(
 
 # function upload files which will take file_bytes, file_name, folder and content_type
 # inside function call upload method of imagekit instance and pass the parameters use documentation of imagekit to know the parameters and their types
-def upload_file(file_bytes: bytes, file_name: str, folder: str, content_type: "image/jpeg" or "image/png" or "image/gif") :
+def upload_file(file_bytes: bytes, file_name: str, folder: str, content_type: str) :
+    
     result = imagekit.files.upload(
-        file=(file_bytes, file_name, content_type),
+        file=file_bytes,
         file_name=file_name,
         folder=folder,
-        is_private_file=False
-        use_unique_file_name=True 
+        is_private_file=False,
+        use_unique_file_name=True,
     )
 
     return result.url
