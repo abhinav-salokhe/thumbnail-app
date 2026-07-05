@@ -1,6 +1,6 @@
 # schema of table for storing the thumbnail data
 
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import uuid4
 from typing import Optional, List
 
